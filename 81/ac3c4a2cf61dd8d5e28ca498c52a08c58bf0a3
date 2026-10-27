@@ -1,0 +1,20 @@
+README.md
+  s_568d0053c6427f::t_3fb2b602277e8a 67-68
+  s_568d0053c6427f::t_6f51ab347ebb29 44-45,48,51-53,55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "81ac3c4a2cf61dd8d5e28ca498c52a08c58bf0a3",
+  "prompts": {},
+  "sessions": {
+    "s_568d0053c6427f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c6442ab2-6106-4c7b-9d43-8b22d29de254",
+        "model": "unknown"
+      },
+      "human_author": "Umang Tank <umang.tank@kitchen365.com>"
+    }
+  }
+}
