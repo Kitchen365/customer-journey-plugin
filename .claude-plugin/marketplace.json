@@ -1,0 +1,12 @@
+{
+  "name": "kitchen365-cj",
+  "owner": { "name": "Kitchen365" },
+  "description": "Kitchen365 Customer Journey for Claude.",
+  "plugins": [
+    {
+      "name": "customer-journey",
+      "source": "./",
+      "description": "The Customer Journey connector, and the know-how to build dashboards on it."
+    }
+  ]
+}

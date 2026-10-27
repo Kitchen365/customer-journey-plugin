@@ -1,0 +1,8 @@
+{
+  "name": "customer-journey",
+  "version": "0.3.0",
+  "description": "Kitchen365 Customer Journey: the read-only connector to your account's leads, deals, calls, meetings, messages, tickets and AI cost, and the know-how to build dashboards on it.",
+  "author": {
+    "name": "Kitchen365"
+  }
+}
