@@ -1,56 +1,89 @@
-# Customer Journey plugin
+# Customer Journey plugin for Claude
 
-The Customer Journey connector (`https://cj.kitchen365.ai/mcp`) and the
-know-how to use it well.
+Read-only access to your Kitchen365 Customer Journey account (leads, deals,
+calls, meetings, messages, support tickets, AI cost), and a skill that builds
+live dashboards on it.
 
-| Skill | What it teaches Claude |
+Installing gives access to nothing by itself: the connector asks each person
+to sign in with their own Automation Hub account.
+
+## What's inside
+
+| Part | What it does |
 |---|---|
-| `customer-journey-dashboards` | how to build any dashboard on CJ data: read the account, ask through the picker, plan, build on live data, verify, hand over. Carries the metric catalog (tool, field, formula, denominator), the rules for combining numbers across tools and people, recipes, design rules, a verify checklist and one worked example |
+| `cj` connector | the Customer Journey tools, read-only |
+| `customer-journey-dashboards` skill | builds any dashboard on CJ data: reads the account, asks what it needs through a multiple-choice picker, proposes a plan, builds on live data, checks the numbers, hands over |
 
-Facts about a single tool live in the CJ server's own descriptions and
-instructions, so every client gets them without this plugin. This skill holds
-only what spans several tools, and how to build.
+The skill loads on its own when a request fits ("build me a sales
+dashboard"). No slash command is needed.
 
-## Install
+## Install in Claude Code
 
-**claude.ai**, as a plugin (checked 2026-10-27):
-
-1. Zip this repository with its manifest at the root, leaving git out:
+1. Add the marketplace:
 
    ```
+   /plugin marketplace add https://github.com/Kitchen365/customer-journey-plugin
+   ```
+
+2. Install the plugin:
+
+   ```
+   /plugin install customer-journey@kitchen365-cj
+   ```
+
+   Or run `/plugin`, open **Discover**, pick `customer-journey`, **Install**.
+   Restart Claude Code if the tools do not show.
+
+3. Sign in: run `/mcp`, choose `cj`, **Authenticate**. In the browser, sign in
+   with your Automation Hub email and password and click **Allow**.
+
+The sign-in lasts about 6 days; after that, `/mcp` and authenticate again.
+
+## Install on claude.ai
+
+1. Get the plugin as a zip, with `.claude-plugin/` at its root:
+
+   ```
+   git clone https://github.com/Kitchen365/customer-journey-plugin
+   cd customer-journey-plugin
    zip -r ../customer-journey-plugin.zip . -x '.git/*'
    ```
-2. Settings → Customize → Plugins → **+ Add** → upload the zip. It installs
-   the skill and the `cj` connector together.
-3. Its **Connectors** tab → `cj` → sign in with your Automation Hub email and
-   password.
-4. **Publish to org** gives it to the whole team.
 
-A skill alone also uploads under Settings → Customize → Skills (zip its
-folder), with the connector added under Connectors by URL.
+   GitHub's own **Download ZIP** puts everything one folder down, which
+   claude.ai does not accept.
 
-**Claude Code / Cowork**: this repository is its own marketplace,
-`kitchen365-cj` (`.claude-plugin/marketplace.json`, the plugin at its root).
+2. Settings → Customize → Plugins → **+ Add** → upload the zip.
+3. The plugin's **Connectors** tab → `cj` → **Connect**, and sign in with your
+   Automation Hub email and password.
+4. Optional: **Publish to org** gives it to your whole team.
+
+## Updating
+
+**Claude Code:**
 
 ```
-/plugin marketplace add <this repository's URL, or a local path to it>
-/plugin install customer-journey@kitchen365-cj
+/plugin marketplace update kitchen365-cj
 ```
 
-The connector is added on install. Sign in once: `/mcp` → `cj` →
-authenticate.
+then update the plugin from `/plugin` → **Installed**.
 
-A connector added on claude.ai also shows in Claude Code for the same
-account. Installing the plugin as well lists every tool twice: keep one.
+**claude.ai:** remove the plugin, then upload a fresh zip (step 1 above).
 
-## Changing a skill
+## Good to know
 
-Skills name tools by their bare name (`pipeline_stats`), so they work under
-any prefix. Renaming a CJ tool breaks them without any error: search this
-folder for the old name in the same change.
+- If the Customer Journey connector was already added on claude.ai, it also
+  shows in Claude Code for the same account. With the plugin as well, every
+  tool is listed twice: keep one.
+- A tool missing from the list was not granted to your account.
 
-A metric added to `skills/customer-journey-dashboards/references/metrics.md` is run
-against a real account first, and marked `live` with the date.
+## For maintainers
 
-Bump `version` in `.claude-plugin/plugin.json`, rebuild the zip and upload it
-again: an installed plugin does not update itself.
+- Facts about a single tool belong in the CJ server's own tool descriptions,
+  where every client sees them. The skill holds only what spans several tools,
+  and how to build.
+- The skill names tools by their bare name (`pipeline_stats`). Renaming a CJ
+  tool breaks it without any error: search this repository for the old name in
+  the same change.
+- A metric added to `skills/customer-journey-dashboards/references/metrics.md`
+  is run against a real account first, and marked `live` with the date.
+- Every release: bump `version` in `.claude-plugin/plugin.json`.
