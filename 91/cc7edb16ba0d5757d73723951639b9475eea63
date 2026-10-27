@@ -1,0 +1,58 @@
+README.md
+  s_568d0053c6427f::t_af1632d0530dd5 32-37
+  s_568d0053c6427f::t_ec225c4e50a4a8 18-21
+  s_568d0053c6427f::t_e5066062a4c95d 15-17
+  s_568d0053c6427f::t_899c8af0cdeaa2 22-24,29-31
+  s_568d0053c6427f::t_e1b44288439438 38-40
+  s_568d0053c6427f::t_902557abf6ca0f 1-14,25-28,41-56
+.claude-plugin/marketplace.json
+  s_568d0053c6427f::t_921bfca8f07267 1-12
+.claude-plugin/plugin.json
+  s_568d0053c6427f::t_c1940369753129 1-8
+.gitignore
+  s_568d0053c6427f::t_59f4ff8da88bfe 1-2
+skills/customer-journey-dashboards/SKILL.md
+  s_e3ccdabcbe7a4a::t_6163d891177254 1-119
+skills/customer-journey-dashboards/examples/team-performance.md
+  s_568d0053c6427f::t_0d1901c21f5db2 1-309
+skills/customer-journey-dashboards/references/data-rules.md
+  s_e3ccdabcbe7a4a::t_dfac58fdf25af5 1-69
+skills/customer-journey-dashboards/references/metrics.md
+  s_568d0053c6427f::t_8bc64b9023d815 1-167
+skills/customer-journey-dashboards/references/patterns.md
+  s_e3ccdabcbe7a4a::t_4efe0f1ba03214 1-62
+skills/customer-journey-dashboards/references/recipes.md
+  s_e3ccdabcbe7a4a::t_af16b6d617b94e 1-99
+skills/customer-journey-dashboards/references/verify.md
+  s_e3ccdabcbe7a4a::t_7fb6799196bbf0 1-49
+.mcp.json
+  s_568d0053c6427f::t_20b5abac5a9ca1 1-8
+skills/customer-journey-dashboards/references/design.md
+  s_568d0053c6427f::t_70657e57b61449 1-56
+skills/customer-journey-dashboards/references/questions.md
+  s_568d0053c6427f::t_600d8805e8afd9 1-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "91cc7edb16ba0d5757d73723951639b9475eea63",
+  "prompts": {},
+  "sessions": {
+    "s_568d0053c6427f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c6442ab2-6106-4c7b-9d43-8b22d29de254",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Umang Tank <umang.tank@kitchen365.com>"
+    },
+    "s_e3ccdabcbe7a4a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a85ba0b8-78ec-4d27-a424-261f42c98925",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Umang Tank <umang.tank@kitchen365.com>"
+    }
+  }
+}
