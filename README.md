@@ -41,21 +41,18 @@ The sign-in lasts about 6 days; after that, `/mcp` and authenticate again.
 
 ## Install on claude.ai
 
-1. Get the plugin as a zip, with `.claude-plugin/` at its root:
+1. Settings → Customize → Plugins → **+ Add** → **Add marketplace**.
+2. URL:
 
    ```
-   git clone https://github.com/Kitchen365/customer-journey-plugin
-   cd customer-journey-plugin
-   zip -r ../customer-journey-plugin.zip . -x '.git/*'
+   https://github.com/Kitchen365/customer-journey-plugin
    ```
 
-   GitHub's own **Download ZIP** puts everything one folder down, which
-   claude.ai does not accept.
-
-2. Settings → Customize → Plugins → **+ Add** → upload the zip.
-3. The plugin's **Connectors** tab → `cj` → **Connect**, and sign in with your
+   Leave **Sync automatically** on, then **Sync**.
+3. Install `customer-journey` from the marketplace.
+4. The plugin's **Connectors** tab → `cj` → **Connect**, and sign in with your
    Automation Hub email and password.
-4. Optional: **Publish to org** gives it to your whole team.
+5. Optional: **Publish to org** gives it to your whole team.
 
 ## Updating
 
@@ -67,7 +64,8 @@ The sign-in lasts about 6 days; after that, `/mcp` and authenticate again.
 
 then update the plugin from `/plugin` → **Installed**.
 
-**claude.ai:** remove the plugin, then upload a fresh zip (step 1 above).
+**claude.ai:** nothing to do with **Sync automatically** on: a push to this
+repository reaches it.
 
 ## Good to know
 
